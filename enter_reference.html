@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Reference Number and Token</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Enter Reference Number and Token</h1>
+        <form id="verifyReferenceForm">
+            <div class="form-group">
+                <label for="referenceNumber">Reference Number:</label>
+                <input type="text" class="form-control" id="referenceNumber" name="referenceNumber" required>
+            </div>
+            <div id="tokenSection" class="form-group" style="display: none;">
+                <label for="token">Token:</label>
+                <input type="text" class="form-control" id="token" name="token" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Your custom JavaScript -->
+    <script src="your_script.js"></script>
+</body>
+</html>

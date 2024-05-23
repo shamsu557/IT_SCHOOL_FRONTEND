@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School_fee_Payment</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container-fluid">
+    <h2 class="text-center bg-white">CompuTech Nexus Academy</h2>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid pl-3">
+        <a href="#" class="navbar-brand">
+            <img src="logo.jpg" alt="Your Logo">
+        </a>
+        <button type="button" class="navbar-toggler" aria-label="Toggle menu" aria-expanded="false" aria-controls="navbar-menu" data-toggle="collapse" data-target="#navbar-menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbar-menu" class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="apply.html">Apply</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="login.html">Login</a></li>
+                <li class="nav-item dropdown ml-1">
+                    <a class="nav-link dropdown-toggle dropdown-toggle-no-caret text-dark" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Payments</a>
+                    <div class="dropdown-menu bg-light text-center mt-3 pt-3 mr-4" aria-labelledby="navbarDropdown1">
+                        <a class="dropdown-item" href="app_payment.html">Application Fees</a>
+                        <a class="dropdown-item" href="#">Course Registration Fees</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<br><br>
+<div class="container center-form">
+    <div class="payment-container">
+        <h1 class="text-center mt-5">Make Payment</h1>
+        
+        <form id="getAdmissionDetailsForm" class="payment-form">
+            <div class="form-group">
+                <label for="admissionNumber">Admission Number:</label>
+                <input type="text" class="form-control" id="admissionNumber" name="admissionNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="paymentNumber">Payment Installment:</label>
+                <select class="form-control" id="paymentNumber" name="paymentNumber">
+                    <option value="1">First </option>
+                    <option value="2">Second</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-dark btn-submit">Get Student Details</button>
+        </form>
+        
+        <div id="studentDetails" class="mt-4"></div>
+        
+        <form id="makeAdmissionPaymentForm" class="payment-form" style="display: none;">
+            <input type="hidden" id="admissionNumberPayment" name="admissionNumber">
+            <input type="hidden" id="first-name" name="firstName">
+            <input type="hidden" id="last-name" name="lastName">
+            <input type="hidden" id="email-address-payment" name="emailAddress">
+            <input type="hidden" id="amount" name="amount">
+            <button type="submit" id="proceedToPaymentButton" class="btn btn-success btn-submit">Proceed to Payment</button>
+        </form>
+        
+    </div>
+</div> <br><br>
+
+<footer class="bg-light text-dark pt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Contact</h5>
+                <p>32Km, Maiduguri Road,<br> Gano 2 Primary School, <br> Dawakin Kudu L.G.A <br>
+                    Kano, Nigeria<br>
+                    Phone: 08030909793<br>
+                    Email: shamsusabo@gmail.com</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Useful Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="apply.html">Apply</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="app_payment.html">Payments</a></li>
+                    <!-- Add your other navbar links here -->
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Courses</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#WD">Web Development</a></li>
+                    <li><a href="#CA">Computer Application </a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <p>&copy; 2024 CompuTech Nexus Academy</p>
+            </div>
+            <div class="col-md-6 text-right">
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square mr-3"></i></a>
+                <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter-square mr-3"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square mr-3"></i></a>
+                <a href="https://web.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp-square mr-3"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="index.js"></script>
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

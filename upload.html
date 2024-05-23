@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Upload</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+  
+  </header>
+  
+  <div class="container mt-5">
+    <div class="col-md-6 offset-md-3">
+      <h2 class="text-center">Document Upload</h2>
+      <div class="form-group">
+        <label for="passTicket">Pass Ticket</label>
+        <input type="text" class="form-control" id="passTicket" name="passTicket">
+      </div>
+      <div id="uploadSection" style="display: none;">
+        <form id="uploadForm">
+          <div class="form-group">
+            <label for="documentType">Select Document Type</label>
+            <select class="form-control" id="documentType">
+              <option value="degree">Degree</option>
+              <option value="nce">NCE</option>
+              <option value="nd">National Diploma(ND)</option>
+              <option value="computer">Computer Certificate</option>
+              <option value="ssce">SSCE</option>
+              <option value="primary">Primary Certificate</option>
+              <!-- Add other document types here -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="selectedDocuments">Upload Selected Document(s)</label>
+            <input type="file" class="form-control-file" id="selectedDocuments" name="selectedDocuments" multiple>
+          </div>
+          <button type="button" class="btn btn-primary btn-block" id="submitSelectedDocuments">Upload</button>
+          <hr>
+          <h4>Uploaded Documents</h4>
+          <ul class="list-group" id="uploadedDocumentsList">
+            <!-- Uploaded documents will be displayed here -->
+          </ul>
+          <!-- Remove the submit button for document upload -->
+        </form>
+      </div>
+      <!-- Add a button to submit passTicket -->
+      <button type="button" class="btn btn-success btn-block mt-3" id="submitFormButton">Submit Pass Ticket</button>
+    </div>
+  </div>
+  <br><br>
+
+  <footer class="bg-light text-dark pt-4">
+    <div class="container">
+      <!-- Footer content -->
+    </div>
+  </footer>
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="index.js"></script>
+  <!-- Bootstrap JS, Popper.js, and jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+  <script>
+    $(document).ready(function() {
+      $('#submitFormButton').click(function() {
+        var passTicket = $('#passTicket').val().trim();
+        $.ajax({
+          url: '/verifyPassTicket',
+          type: 'POST',
+          data: { passTicket: passTicket },
+          success: function(response) {
+            if (response === 'valid') {
+              $('#uploadSection').show();
+            } else {
+              alert('Invalid passTicket. Please enter a valid passTicket.');
+            }
+          },
+          error: function() {
+            alert('Error verifying passTicket. Please try again.');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

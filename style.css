@@ -1,0 +1,297 @@
+/* Universal Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+ /* Add this CSS to hide the caret */
+ .dropdown-toggle-no-caret::after {
+  display: none;
+  }
+  
+  .dropdown-item:hover {
+  color: #ebe3e3;
+  background: #232524;
+  }
+  .dropdown-menu {
+    display: none; /* Initially hide the dropdown menu */
+    position: absolute; /* Position absolutely */
+    background: #e9e2e2;
+  }
+  
+  
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block; /* Show the dropdown menu on hover */
+  }
+  
+  .navbar-brand {
+    padding-left: 20px;
+  }
+  .navbar-brand img {
+              width: 43px; /* Adjust the width as needed */
+              height: 43px; /* Adjust the height as needed */
+              border-radius: 57%; /* Make the image rounded */
+              margin-left: 0;
+          }
+  .home-link {
+    color: var(--navbar-text-color);
+    transition: color 0.2s ease-in-out;
+    text-decoration: none;
+    display: flex;
+    font-weight: 400;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out,
+                color 0.2s ease-in-out;
+  }
+  .navbar-link {
+    justify-content: center;
+    width: 100%;
+    padding: 0.4em 0.8em;
+    border-radius: 5px;
+  }
+  .navbar-link:focus,
+  .navbar-link:hover {
+    color: var(--navbar-text-color-focus);
+    background-color: var(--navbar-bg-contrast);
+  }
+  .navbar-toggle {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .icon-bar {
+    display: block;
+    width: 25px;
+    height: 4px;
+    margin: 2px;
+    transition: background-color 0.2s ease-in-out,
+                transform 0.2s ease-in-out,
+                opacity 0.2s ease-in-out;
+    background-color: var(--navbar-text-color);
+  }
+  .navbar-brand{
+    padding-left: 0;
+  }
+  
+  .menu-opened {
+    overflow: hidden; /* Prevent scrolling of the main content */
+  }
+  
+  /* Adjust your navbar styles to expand */
+  #navbar.opened {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* Adjust as needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  }
+  .dropdown-menu{
+      width:220px;
+      height:120px;
+      
+  }
+  #navbar-menu {
+      margin-left: 48%; /* Adjust the value as needed */
+      padding-right: 65px;
+  
+  }
+  @media (max-width: 990px) {
+      #navbar-menu {
+          margin-left: 20px; /* Adjust the value as needed */
+  
+      }
+  }
+
+  
+/* Welcome section styles */
+.carousel-item {
+  height: 75vh; /* Adjust height as needed */
+  background-size: cover;
+  background-position: center;
+}
+
+#home .carousel-item:nth-child(1) {
+  background-image: url('bgrnd2.jpg');
+}
+
+#home .carousel-item:nth-child(2) {
+  background-image: url('comp.jpg');
+}
+
+#home .carousel-item:nth-child(3) {
+  background-image: url('web.jpg');
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+
+.container-welcome h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.container-welcome p {
+  font-size: 1.5rem;
+}
+
+/* About section styles */
+.container-about {
+  padding: 50px 0;
+}
+
+.container-about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.container-about p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Apply section styles */
+.container-apply {
+  padding: 50px 0;
+}
+
+.container-apply h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.container-apply p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Contact section styles */
+.container-contact {
+  padding: 50px 0;
+}
+
+.container-contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.container-contact p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.footer {
+  background-color: #f9faf9;
+  color: #37423b;
+  font-size: 14px;
+}
+
+.footer .container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.footer .container hr {
+  border-top-color: #ddd;
+}
+
+.footer .container h5 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #444444;
+  margin-bottom: 20px;
+}
+
+.footer .container p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #777777;
+  margin-bottom: 0;
+}
+
+.footer .container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer .container ul li {
+  margin-bottom: 10px;
+}
+
+.footer .container a {
+  color: #37423b;
+}
+
+.footer .container a:hover {
+  color: #007bff;
+}
+
+.footer .container i.fa {
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 15px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: rgb(210, 210, 233);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+/* Center the form */
+.center-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Custom styling for the form container */
+.payment-container,
+.form-container {
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  background-color: #f9f9f9;
+  width: 600px;
+}
+
+/* Custom styling for the form */
+.payment-form,
+.login-form {
+  max-width: 500px;
+  margin: auto;
+}
+
+/* Custom styling for the submit button */
+.btn-submit,
+.btn-login {
+  width: 100%;
+  font-size: 18px;
+  padding: 10px;
+}
